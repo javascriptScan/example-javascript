@@ -1,6 +1,6 @@
 
 function vulnerable() {
-  console.log('do something dubious');
+  console.log('do something dubious111');
   return 1;
 }
 
