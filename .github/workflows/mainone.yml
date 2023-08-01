@@ -1,19 +1,23 @@
-on: 
+name: Code Scanning
+
+on:
   push:
-    branches:  
-    - '*'
-  workflow_dispatch:
+    branches:
+      - '*'
+
 jobs:
-  veracode-sca-task:
+  code-scanning:
     runs-on: ubuntu-latest
-    name: Scan repository with Veracode SCA
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Run Veracode SCA
-        env:
-          SRCCLR_API_TOKEN: ${{ secrets.SRCCLR_API_TOKEN }}
-        uses: veracode/veracode-sca@v2.1.6
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          create-issues: false 
+    # Step 1: Checkout the code
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    # Step 2: Run the code scanning action
+    - name: Code scanning analysis
+      uses: github/codeql-action/analyze@v2
+      with:
+        languages: javascript, python, java  # Customize the list of languages as needed
+
+    # Add more steps here as per your requirements
