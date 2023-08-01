@@ -1,6 +1,7 @@
 on: 
   push:
-    branches: [ "*" ]
+    branches:  
+    - '*'
   workflow_dispatch:
 jobs:
   veracode-sca-task:
