@@ -16,7 +16,7 @@ jobs:
 
     # Step 2: Run the code scanning action
     - name: Code scanning analysis
-      uses: github/codeql-action/analyze@v2
+      uses: actions/checkout@v2
       with:
         languages:  '*'
         #javascript, python, java  # Customize the list of languages as needed
