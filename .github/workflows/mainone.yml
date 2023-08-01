@@ -18,6 +18,7 @@ jobs:
     - name: Code scanning analysis
       uses: github/codeql-action/analyze@v2
       with:
-        languages: javascript, python, java  # Customize the list of languages as needed
+        languages:  '*'
+        #javascript, python, java  # Customize the list of languages as needed
 
     # Add more steps here as per your requirements
