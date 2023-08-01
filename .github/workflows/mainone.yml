@@ -9,16 +9,4 @@ jobs:
   code-scanning:
     runs-on: ubuntu-latest
 
-    steps:
-    # Step 1: Checkout the code
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    # Step 2: Run the code scanning action
-    - name: Code scanning analysis
-      uses: actions/checkout@v2
-      with:
-        languages:  '*'
-        #javascript, python, java  # Customize the list of languages as needed
-
-    # Add more steps here as per your requirements
+   
